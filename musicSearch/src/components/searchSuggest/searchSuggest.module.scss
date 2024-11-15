@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  padding: 0.1rem;
+  overflow: hidden;
+  h5 {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    flex-shrink: 0;
+  }
+  ul {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    li {
+      height: 0.5rem;
+      line-height: 0.5rem;
+      font-size: 0.16rem;
+      padding: 0 0.1rem;
+      color: rgba(0, 0, 0, 0.8);
+      border-bottom: 0.01rem solid rgba($color: #000000, $alpha: 0.2);
+      flex-shrink: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

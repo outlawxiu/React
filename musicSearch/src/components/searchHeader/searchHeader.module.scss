@@ -1,0 +1,31 @@
+.header {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    width: 0.5rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .input {
+    background: rgba(0, 0, 0, 0.05);
+    height: 0.36rem;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 0.2rem;
+    input {
+      background: none;
+      border: none;
+      outline: none;
+      flex: 1;
+    }
+    b {
+      font-size: 0.3rem;
+      font-weight: normal;
+    }
+  }
+}

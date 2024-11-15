@@ -1,0 +1,60 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+li {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  &:hover {
+    background: #f2f2f2;
+  }
+}
+input[type="checkbox"] {
+  background: green;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background: white;
+  border: 1px solid;
+  padding: 10px;
+  margin-top: 10px;
+  opacity: 1;
+  transform: translateY(0%);
+  transition: visibility 1s , opacity 1s , transform 1s;
+  visibility: visible;
+}
+.inp {
+  line-height: 30px;
+  border: none;
+  padding-left: 20px;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.hide {
+  // display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+}
+label {
+  flex: 1;
+}
+
+@keyframes opcatity {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
