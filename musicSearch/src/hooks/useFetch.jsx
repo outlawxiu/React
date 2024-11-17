@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-axios.defaults.baseURL = "http://zyxcl.xyz/music/api";
+axios.defaults.baseURL = "https://zyxcl.xyz/music/api";
 export const useFetch = ({ url, immediate, params = {} }) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
