@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Controller from "./components/controller/Controller";
+import Keyboard from "./components/keyboard/Keyboard";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useFetch } from "./hooks/useFetch";
+import { useUpdate } from "./hooks/useUpdate";
+const App = () => {
+  const [isBank, setIsBank] = useState(false);
+  const [volume, setVolume] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [nowMusic, setNowMusic] = useState("");
+  const { data, loading, refresh } = useFetch({
+    url: "https://zyxcl.xyz/exam_api/music/list",
+    immediate: true,
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="whole">
+      <div className="left">
+        <Keyboard
+          isBank={isBank}
+          volume={volume}
+          isDisabled={isDisabled}
+          data={data}
+          setNowMusic={setNowMusic}
+        ></Keyboard>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="right">
+        <Controller
+        isBank={isBank}
+        setIsBank={setIsBank}
+        volume={volume}
+        setVolume={setVolume}
+        isDisabled={isDisabled}
+        setIsDisabled={setIsDisabled}
+        nowMusic={nowMusic}
+        ></Controller>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
