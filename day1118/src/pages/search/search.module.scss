@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 0.14rem;
+  }
+  li {
+    list-style-type: none;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+    font-size: calc(100vw / 375 * 100);
+  }
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+  .whole {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    width: 100%;
+    height: 0.6rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  main {
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .loading{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.bgWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  filter: blur(0.1rem);
+  display: flex;
+  justify-content: center;
+  .bgMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+.whole {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2rem;
+  position: relative;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.7);
+  h5 {
+    line-height: 0.3rem;
+  }
+}
+.controls {
+  width: 100%;
+  display: flex;
+  p {
+    flex: 1;
+    width: 20%;
+    flex-shrink: 0;
+    text-align: center;
+    &.volume {
+      input {
+        transform: rotate(-90deg);
+        transform-origin: -20px -45px;
+        &.hide{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.nowTime{
+  width: 100%;
+  height: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input{
+    width: 70%;
+  }
+}
+.avator {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  margin: 0.2rem 0;
+  animation: circle 5s linear infinite;
+  animation-play-state: paused;
+}
+.lyric {
+  height: 1.5rem;
+  width: 100%;
+  line-height: 0.3rem;
+  overflow-y: auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.16rem;
+  scroll-behavior: smooth;
+  transform: all 0.3s linear;
+  position: relative;
+  .now {
+    font-size: 0.18rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.running {
+  animation-play-state: running;
+}
+.songName {
+  line-height: 0.3rem;
+  font-size: 0.16rem;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
