@@ -22,7 +22,7 @@ const SearchResult = (props) => {
             {data?.result?.songs?.map((item, index) => (
               <li key={index} onClick={() => {
                 navigateTo(`/player?id=${item.id}`)
-              }}>{item.name}</li>
+              }}>{item.name} {item.artists.map( person => person.name).join("/")}</li>
             ))}
           </ul>
         </>
