@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./searchMain.module.scss";
 import { useFetch } from "../../../../hooks/useFetch";
-import Loading from "../loading/Loading";
+import Loading from "../../../../componsnts/loading/Loading";
 const SearchMain = (props) => {
   const { data, loading } = useFetch({ url: "/search/hot", immediate: true });
   return (

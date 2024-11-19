@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "../../../../hooks/useFetch";
 import style from "../searchSuggest/searchSuggest.module.scss";
-import Loading from "../loading/Loading";
+import Loading from "../../../../componsnts/loading/Loading";
 import { useNavigate } from 'react-router-dom'
 const SearchResult = (props) => {
   const navigateTo = useNavigate()

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import style from "./searchSuggest.module.scss";
 import { useFetch } from "../../../../hooks/useFetch";
-import Loading from "../loading/Loading";
+import Loading from "../../../../componsnts/loading/Loading";
 const SearchSuggest = (props) => {
   const { data, refresh, loading } = useFetch({
     url: "/search/suggest",
