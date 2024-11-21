@@ -23,10 +23,14 @@
         padding-right: 50px;
         border: 0.05px solid;
       }
+      .hide{
+        /* display: none; */
+        /* visibility: hidden; */
+      }
     </style>
   </head>
   <body>
-    <span>A</span>
+    <span class="hide">A</span>
 
     <span>B</span>
     <p></p>
@@ -46,7 +50,7 @@
 
       // const num = Symbol(100)
       // console.log(typeof Symbol(100));
-      
+      // console.log(document.querySelector("span"));
       // 去重
       var removeDuplicates = function (nums) {
         return nums.reduce(
@@ -55,7 +59,8 @@
         );
       };
       
-      console.log(removeDuplicates([]));
+      console.log(removeDuplicates([,12,654,,54,,45,1,,,4,,58,,1,,5,]));
+
       
     </script>
   </body>

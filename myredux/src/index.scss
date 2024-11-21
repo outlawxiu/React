@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 0.14rem;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    font-size: calc(100vw/375*100);
+}
+#root{
+    height: 100vh;
+    width: 100vw;
+}
+a{
+    text-decoration: none;
+    color: #91A3AB;
+    -webkit-tap-highlight-color: transparent;
+    &.active{
+        color: #F12A25;
+    }
+}
