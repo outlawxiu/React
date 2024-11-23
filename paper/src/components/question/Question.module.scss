@@ -1,0 +1,83 @@
+.whole{
+    min-height: 160px;
+    display: flex;
+    background: white;
+    margin-top: 8px;
+    &:hover .tool{
+        visibility: visible;
+    }
+}
+.left{
+    width: 50px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span{
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+    }
+}
+.right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+.tip{
+    pointer-events: none;
+}
+.tool{
+    pointer-events: auto;
+    visibility: hidden;
+    cursor: pointer;
+}
+.question{
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    padding: 2px;
+    padding-right: 52px;
+}
+.input{
+    background: white;
+    width: 100%;
+    min-width: 710px;
+    height: 100%;
+    border-radius: 0;
+    border: 1px solid transparent;
+    outline: none;
+    flex: 1;
+    &:hover{
+        background: #FDF9CD;
+    }
+    &:focus{
+        background: #FDF9CD;  
+        border-color: black;
+    }
+}
+.options{
+    flex: 1;
+    padding: 10px 30px 10px 5px;
+}
+.controls{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    .tip{
+        margin-left: 15px;
+    }
+}
+.group{
+    width: 100%;
+}
+.radio{
+    // width: 100%;
+    // height: 100%;
+    // justify-content: start;
+    // height: 30px;  
+    // line-height: 30px;
+    // padding: 0 10px;
+    // display: flex;
+}

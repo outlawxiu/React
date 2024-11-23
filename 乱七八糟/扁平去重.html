@@ -8,7 +8,13 @@
 
   <body>
     <script>
-      let arr = [,2, 5, 45,[, 45, 6, , 8, 4, 2, 1, [, 9, 6, 8, 1, 3, , 7], 4, 5, , 78, 1, 48, 1],];
+      let arr = [
+        ,
+        2,
+        5,
+        45,
+        [, 45, 6, , 8, 4, 2, 1, [, 9, 6, 8, 1, 3, , 7], 4, 5, , 78, 1, 48, 1],
+      ];
 
       // function removeDuplicates(params, contain = []) {
       //   if (!Array.isArray(params)) return params;
@@ -20,17 +26,31 @@
       // const result = removeDuplicates(arr)
       // console.log(result.slice(result.lastIndexOf(result[0])));
 
+      // function removeDuplicates(params,contain = new Set()) {
+      //   if (!Array.isArray(params)) return [...contain.add(params)]
+      //   params.forEach(item => {
+      //     removeDuplicates(item,contain)
+      //   });
+      //   return [...contain].sort((a,b) => a - b)
+      // }
 
-      function removeDuplicates(params,contain = new Set()) {
-        if (!Array.isArray(params)) return [...contain.add(params)]
-        params.forEach(item => {
-          removeDuplicates(item,contain)
-        });
-        return [...contain]
+      // console.log(removeDuplicates(arr));
+
+      function removeDuplicates(params, contain = []) {
+        if (!Array.isArray(params)) return params;
+        return params.reduce(
+          // concat 叠加了上次的结果
+          (prev, now) =>
+            prev.includes(now)
+              ? prev
+              : prev.concat(removeDuplicates(now, prev)),
+          contain
+        );
       }
+      const result = removeDuplicates(arr);
+      console.log(result);
       
-      console.log(removeDuplicates(arr));
-      
+      // console.log(result.slice(result.lastIndexOf(result[0])));
     </script>
   </body>
 </html>

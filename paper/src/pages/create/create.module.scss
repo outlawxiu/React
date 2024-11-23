@@ -1,0 +1,29 @@
+.whole{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.paper{
+    width: 1000px;
+    height: 100px;
+    margin-top: 2px;
+    display: flex;
+    position: relative;
+}
+.aside{
+    width: 138px;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+.content{
+    flex: 1;
+    background: white;
+}
+:global{
+    :where(.css-dev-only-do-not-override-1x0dypw).ant-select-single.ant-select-open .ant-select-selection-item {
+        border-radius: 0;
+    }
+}

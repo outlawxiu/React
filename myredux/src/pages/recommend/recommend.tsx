@@ -1,8 +1,8 @@
 import React from 'react'
-
+import style from './recommend.module.scss'
 const recommend = () => {
   return (
-    <div>
+    <div className={style.whole}>
 
       推荐页面
       
