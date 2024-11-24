@@ -1,6 +1,7 @@
 import Create from "../pages/create/create";
 import Home from "../pages/home/home";
 import NotFound from '../pages/notFound/notFound'
+import Preview from '../pages/preview/preview'
 const routes = [
   {
     path: "/",
@@ -9,6 +10,10 @@ const routes = [
   {
     path: "/create",
     element: <Create></Create>,
+  },
+  {
+    path: "/preview",
+    element: <Preview></Preview>,
   },
   {
     path: "*",

@@ -3,6 +3,8 @@ import { Form, Select, Card } from "antd";
 import "./Header.module.scss";
 const Header = (props) => {
   const [form] = Form.useForm()
+  console.log(form);
+  
   return (
     <Card
       title="丨 教师出题"

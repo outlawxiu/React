@@ -20,7 +20,8 @@ const home = () => {
   const dispatch = useAppDispatch();
   const columns: TableProps<DataType>["columns"] = [
     {
-      // key: "paperId",
+      dataIndex: "key",
+      rowScope: "row",
       render(value, record, index) {
         return index + 1;
       },
@@ -52,14 +53,19 @@ const home = () => {
     },
     {
       title: "操作",
-      key: "paperId",
-      render: (_, record) => (
+      key: "action",
+      render: (value, record) => (
         <Space size="middle">
+                    <Link to={`/preview?id=${record.paperId}`}>
+                    <Button type="primary">预览</Button>
+          </Link>
+
           <Link to={`/create?id=${record.paperId}`}>
             <Button>编辑</Button>
           </Link>
           <Button
             type="primary"
+            danger
             onClick={() => {
               dispatch(delPaper({ paperId: record.paperId }));
             }}
@@ -74,7 +80,12 @@ const home = () => {
   const list = useAppSelector<DataType[]>((state) => state.papers.list);
   return (
     <div>
-      <Table<DataType> pagination={false} columns={columns} dataSource={list} />
+      <Table<DataType>
+        pagination={false}
+        rowKey="paperId"
+        columns={columns}
+        dataSource={list}
+      />
       <Link to="/create">
         <Button type="primary">添加</Button>
       </Link>
