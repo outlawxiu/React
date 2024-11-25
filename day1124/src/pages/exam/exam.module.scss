@@ -1,0 +1,116 @@
+.whole {
+  width: 1200px;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  background: white;
+  padding-top: 15px;
+}
+.header {
+  height: 55px;
+  background: #ddd;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  line-height: 50px;
+  padding-left: 50px;
+}
+.question {
+  width: 100%;
+  display: flex;
+  border-top: 5px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  .left {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    span {
+      width: 30px;
+      height: 30px;
+      background: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: white;
+    }
+  }
+  .right {
+    flex: 1;
+    h3{
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+  }
+}
+:global {
+  :where(.css-dev-only-do-not-override-1x0dypw).ant-radio-group {
+    width: 100%;
+  }
+  :where(.css-dev-only-do-not-override-1x0dypw).ant-space-gap-col-small {
+    width: 100%;
+  }
+  :where(.css-dev-only-do-not-override-1x0dypw).ant-radio-wrapper {
+    width: 100%;
+  }
+  .ant-space-item {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+  :where(.css-dev-only-do-not-override-1x0dypw).ant-btn-variant-solid {
+    width: 100px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    left: calc(50% + 500px);
+    border-radius: 0;
+  }
+}
+
+.answerCard {
+  width: 300px;
+  min-height: 50px;
+  position: fixed;
+  top: 0px;
+  left: calc(50% + 300px);
+  background: rgba(0, 0, 0, 0.5);
+  .djs {
+    height: 50px;
+    display: flex;
+    .dtk {
+      background: blue;
+      color: white;
+    }
+    div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+    }
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    a {
+      color: unset;
+      text-decoration: none;
+      width: 40px;
+      height: 40px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0 0 15px;
+      &.active{
+        background: green;
+      }
+      &.wrong{
+        background: red;
+      }
+    }
+  }
+}
