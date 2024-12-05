@@ -1,12 +1,12 @@
-import { useAppSelector } from '../../hooks/storeHook'
-import React from "react";
+import { useAppSelector } from "../../hooks/storeHook";
+import React, { useEffect } from "react";
 import style from "../exam/exam.module.scss";
 import { Radio, Space } from "antd";
 const wrongBook = () => {
-  const wrong = useAppSelector(state => state.papers.wrong)
+  const wrong = useAppSelector((state) => state.papers.wrong);
   return (
     <div className={style.whole}>
-        <div className={style.questions}>
+      <div className={style.questions}>
         {wrong.map((item, index) => (
           <div className={style.question} key={index} id={`${index}`}>
             <div className={style.left}>
@@ -14,9 +14,7 @@ const wrongBook = () => {
             </div>
             <div className={style.right}>
               <h3>{item.question}</h3>
-              <Radio.Group
-                value={item.result}
-              >
+              <Radio.Group value={item.result}>
                 <Space direction="vertical">
                   {item.options.map((option, optionIndex) => (
                     <Radio
@@ -33,7 +31,7 @@ const wrongBook = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default wrongBook
+export default wrongBook;

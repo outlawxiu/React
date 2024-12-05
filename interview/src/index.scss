@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+  font-size: 0.14rem;
+}
+html {
+  height: 100%;
+  width: 100%;
+  font-size: calc(100vw / 375 * 100);
+}
+body,
+#root,
+#whole {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  // background: #1F1F1F;
+  // color: #AAAAAA;
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  -webkit-tap-highlight-color: transparent;
+  &.active {
+    // color: #e46962;
+    color: #3ba418;
+  }
+}
