@@ -91,7 +91,7 @@ const questionCreate = () => {
   const { data: classifyList } = useRequest(apiClassifyList);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-  const dragger = useRef(null);
+  // const dragger = useRef(null);
   const formRef = useRef();
 
   return (
@@ -123,7 +123,8 @@ const questionCreate = () => {
       {isUpload && (
         <>
           <Dragger
-            ref={dragger}
+            accept=".xlsx,.xls"
+            // ref={dragger}
             maxCount={1}
             onChange={(info) => {
               const file = info.file.originFileObj;
@@ -187,12 +188,14 @@ const questionCreate = () => {
                 answer,
                 desc: values.desc,
               };
+              // console.log(params);
+              // return
               await waitTime(2000);
               const res = await apiQuestionCreate(params);
               if (res.data.code === 200) {
                 message.success("提交成功");
                 formRef.current?.resetFields();
-                setIsModalOpen(true)
+                setIsModalOpen(true);
               }
             }}
           >
@@ -209,6 +212,9 @@ const questionCreate = () => {
                       width="xs"
                       name="type"
                       label={`题型`}
+                      onChange={() => {
+                        formRef.current?.resetFields(["answer","A","B","C","D"]);
+                      }}
                     />
                   );
                 }}
@@ -352,17 +358,17 @@ const questionCreate = () => {
                               rules={[{ required: true }]}
                             ></ProFormText>
                           ),
-                          value: "对",
+                          value: "A",
                         },
                         {
                           label: (
                             <ProFormText
                               name="B"
-                              label="对"
+                              label="错"
                               rules={[{ required: true }]}
                             ></ProFormText>
                           ),
-                          value: "错",
+                          value: "B",
                         },
                       ]}
                     ></ProFormRadio.Group>

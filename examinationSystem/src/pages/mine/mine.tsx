@@ -76,7 +76,7 @@ const mine: React.FC = () => {
         onChange={handleChange}
       >
         {imageUrl ? (
-          <img src={imageUrl} alt="avatar" style={{ width: "100%" }} />
+          <img src={imageUrl} alt="avatar" style={{ width: "100%" ,borderRadius:"50%"}} />
         ) : (
           uploadButton
         )}
